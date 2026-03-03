@@ -1,16 +1,82 @@
-# React + Vite
+# Fenrir SaaS Security Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This repository contains the frontend implementation of the Fenrir B2B SaaS Security Platform. It accurately translates provided design references into a responsive, production-ready React application.
 
-Currently, two official plugins are available:
+## 🚀 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Pixel-Perfect UI**: Recreated Login, Dashboard, and Scan Detail screens based on high-fidelity designs.
+- **Dark/Light Mode**: Full theme support with an instant toggle (accessible via the `aps` logo or the Sidebar).
+- **Responsive Layout**: Adapts seamlessly to both desktop and mobile devices.
+- **Component-Driven**: Built with highly reusable UI components (Buttons, Badges, Inputs, Status Chips).
+- **Interactive Data**: Powered by mock data to simulate a realistic application state without a backend.
+- **Dynamic Navigation**: Client-side routing to transition effortlessly between screens.
 
-## React Compiler
+## 🛠 Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: React 18
+- **Build Tool**: Vite v5 (Optimized for fast HMR and optimized builds)
+- **Styling**: Tailwind CSS v3 (Utility-first CSS framework for rapid UI development)
+- **Routing**: React Router DOM v6
+- **Icons**: Lucide React
+- **Utilities**: `clsx` and `tailwind-merge` for robust class name resolution
 
-## Expanding the ESLint configuration
+## 🔧 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### Prerequisites
+
+- Node.js (v20 or higher recommended)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/YourUsername/fenrir-spl.git
+   cd fenrir-spl
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   ```
+   The application will be available at `http://localhost:5173`.
+
+### Production Build
+
+To create a production-optimized build, run:
+```bash
+npm run build
+```
+The output will be placed in the `dist` folder. You can preview the build using:
+```bash
+npm run preview
+```
+
+## 🎥 Video Walkthrough
+
+[Provide Loom Video Link Here]
+
+## 🌐 Live Deployment
+
+[Provide Vercel Live Link Here]
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── layout/       # AppLayout, Sidebar
+│   └── ui/           # Reusable components (Button, Input, Badge)
+├── data/             # mockData.js
+├── hooks/            # useTheme.jsx (Theme provider)
+├── pages/            # Login, Dashboard, ScanDetail
+├── utils/            # cn.js (Class name utility)
+├── App.jsx           # Main routing configuration
+├── main.jsx          # Entry point
+└── index.css         # Global styles & Tailwind configuration
+```
