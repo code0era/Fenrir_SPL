@@ -63,7 +63,7 @@ npm run preview
 
 ## 🌐 Live Deployment
 
-[Provide Vercel Live Link Here]
+https://fenrir-spl.vercel.app/
 
 ## 📂 Project Structure
 
