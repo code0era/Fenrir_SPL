@@ -1,6 +1,7 @@
 import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
+import ScanDetail from './pages/ScanDetail';
 import { AppLayout } from './components/layout/AppLayout';
 
 function App() {
@@ -9,7 +10,7 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route element={<AppLayout />}>
         <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/scan/:id" element={<div className="p-8"><h1 className="text-2xl font-bold">Scan Detail Placeholder</h1></div>} />
+        <Route path="/scan/:id" element={<ScanDetail />} />
       </Route>
     </Routes>
   );
