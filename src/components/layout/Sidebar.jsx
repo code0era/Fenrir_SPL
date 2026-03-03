@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, FolderKanban, Activity, Calendar, Bell, Settings, LifeBuoy, Menu, X, ChevronRight } from 'lucide-react';
+import { LayoutDashboard, FolderKanban, Activity, Calendar, Bell, Settings, LifeBuoy, Menu, X, ChevronRight, Moon, Sun } from 'lucide-react';
 import { cn } from '../../utils/cn';
+import { useTheme } from '../../hooks/useTheme';
 
 const navItems = [
     { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
@@ -18,10 +19,11 @@ const bottomNavItems = [
 
 export function Sidebar() {
     const [isMobileOpen, setIsMobileOpen] = useState(false);
+    const { toggleTheme } = useTheme();
 
     const NavContent = () => (
         <>
-            <div className="flex items-center gap-2 px-6 py-6 mb-4">
+            <div className="flex items-center gap-2 px-6 py-6 mb-4 cursor-pointer" onClick={toggleTheme}>
                 <div className="h-6 w-6 rounded-full bg-primary flex items-center justify-center">
                     <div className="h-2 w-2 rounded-full bg-white" />
                 </div>
@@ -62,6 +64,17 @@ export function Sidebar() {
                         {item.label}
                     </a>
                 ))}
+
+                <button
+                    onClick={toggleTheme}
+                    className="w-full mt-2 flex items-center justify-between px-3 py-2.5 rounded-lg text-sm font-medium text-text-lightMuted dark:text-text-darkMuted hover:bg-surface-lightHover dark:hover:bg-surface-darkHover hover:text-text-light dark:hover:text-text-dark transition-colors"
+                >
+                    <div className="flex items-center gap-3">
+                        <Moon className="h-5 w-5 hidden dark:block" />
+                        <Sun className="h-5 w-5 block dark:hidden" />
+                        <span>Toggle Theme</span>
+                    </div>
+                </button>
             </nav>
 
             <div className="p-4 mt-auto">

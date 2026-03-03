@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Check, Eye, EyeOff, Star } from 'lucide-react';
+import { Check, Eye, EyeOff, Star, Moon, Sun } from 'lucide-react';
 import { Button } from '../../components/ui/Button';
 import { Input } from '../../components/ui/Input';
 import { useTheme } from '../../hooks/useTheme';
@@ -17,7 +17,7 @@ export default function Login() {
     };
 
     return (
-        <div className="flex min-h-screen bg-[#0A1110]">
+        <div className="flex min-h-screen bg-[#0A1110] relative">
             {/* Left Side Branding */}
             <div className="hidden lg:flex flex-col flex-1 relative overflow-hidden text-white/90 p-12 justify-between">
                 {/* Abstract Background Gradient Blob */}
@@ -71,7 +71,18 @@ export default function Login() {
 
             {/* Right Side Form */}
             <div className="flex-1 flex flex-col justify-center items-center p-6 sm:p-12 relative z-20">
-                <div className="w-full max-w-md bg-white dark:bg-surface-dark rounded-3xl p-8 sm:p-10 shadow-2xl relative">
+
+                {/* Theme Toggle Button */}
+                <button
+                    onClick={toggleTheme}
+                    className="absolute top-8 right-8 p-3 rounded-full bg-white/10 hover:bg-white/20 dark:bg-black/20 dark:hover:bg-black/40 text-gray-800 dark:text-white transition-colors backdrop-blur-md"
+                    aria-label="Toggle theme"
+                >
+                    <Moon className="h-5 w-5 hidden dark:block" />
+                    <Sun className="h-5 w-5 block dark:hidden" />
+                </button>
+
+                <div className="w-full max-w-md bg-white dark:bg-surface-dark rounded-3xl p-8 sm:p-10 shadow-2xl relative mt-12 sm:mt-0">
                     <div className="text-center mb-8">
                         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Sign up</h2>
                         <p className="text-gray-500 dark:text-gray-400 text-sm">
